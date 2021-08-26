@@ -16,6 +16,7 @@ const tasks = handleActions({
   [actions.removeTask](state, { payload: { id } }) {
     const { byId, allIds } = state;
     return {
+      ...state,
       byId: _.omit(byId, id),
       allIds: _.without(allIds, id),
     };

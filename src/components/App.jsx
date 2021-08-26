@@ -1,19 +1,18 @@
 import React from 'react';
-import TaskList from './TaskList/TaskList.jsx';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import TaskList from './TaskList.jsx';
 import Filter from './Filter.jsx';
 import AddTask from './AddTask.jsx';
-import Header from './Header/Header.jsx';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { Container } from 'react-bootstrap';
 
 const App = () => (
   <>
-    <Container className="bg-light pb-3" style={{height: '100%'}}>
-    <Header />
-    <AddTask />
-    <Filter />
-    <TaskList />
-    </Container>
+    <div className="min-vw-100 min-vh-100">
+      <div className="d-flex justify-content-center">
+        <Filter />
+      </div>
+      <TaskList />
+      <AddTask />
+    </div>
   </>
 );
 

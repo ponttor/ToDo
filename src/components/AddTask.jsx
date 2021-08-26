@@ -3,7 +3,7 @@ import _ from 'lodash';
 import { connect } from 'react-redux';
 import * as actions from '../actions/index.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Button, Form } from 'react-bootstrap'
+import { Form } from 'react-bootstrap'
 
 const mapStateToProps = (state) => {
   const props = {
@@ -21,8 +21,8 @@ const AddTask = ({
   addTask,
   text,
   updateNewTaskText,
-}) => {  
-  
+}) => {
+
   const handleAddTask = (e) => {
     e.preventDefault();
     const task = { text, id: _.uniqueId() };
@@ -33,22 +33,14 @@ const AddTask = ({
     updateNewTaskText({ text: e.target.value });
   };
 
-  const divStyle = {
-    marginLeft: '8px',
-    border: '0',
-  };
-
   return (
     <>
-<Form className="d-flex justify-content-center mt-3" onSubmit={handleAddTask}>
-<Form.Group className="mb-3" controlId="formBasicEmail">
-  <Form.Control type="text" onChange={handleUpdateNewTaskText} value={text} placeholder="Enter task" />
-</Form.Group>
-<Button className="mb-3 text-white" variant="info" style={divStyle} type="submit">
-  Add
-</Button>
-</Form>
-</>
+      <Form className="d-flex justify-content-center mt-3" onSubmit={handleAddTask}>
+        <Form.Group className="mb-3" controlId="formBasicEmail">
+          <Form.Control type="text" onChange={handleUpdateNewTaskText} value={text} placeholder="Enter task" />
+        </Form.Group>
+      </Form>
+    </>
   );
 };
 
