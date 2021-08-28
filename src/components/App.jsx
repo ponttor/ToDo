@@ -1,5 +1,4 @@
 import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import TaskList from './TaskList.jsx';
 import Filter from './Filter.jsx';
 import AddTask from './AddTask.jsx';
